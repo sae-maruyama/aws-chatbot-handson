@@ -102,6 +102,9 @@ AWSサービスを活用したナレッジベースチャットボットの構�
    - **JWT**: 「いいえ」を選択
 8. 生成された「ウィジェットのスクリプト」をコピーし、WebサイトのHTMLに貼り付け
 
+## 実行結果
+![実行結果](images/output.png)
+
 ---
 
 ## トラブルシューティング
@@ -160,6 +163,5 @@ Amazon Connectのコミュニケーションウィジェット設定で「ドメ
 
 ## 🔗 参考リンク
 
-- [Amazon Bedrock Documentation](https://docs.aws.amazon.com/bedrock/)
 - [AWSを使ってノーコードでナレッジベースのAIチャットボットを作ってみた](https://business.ntt-east.co.jp/content/cloudsolution/ih_column-127.html)
 - [Amazon LexとAmazon Bedrockを使ってノーコードでチャットボットを作成するハンズオン](https://qiita.com/stand_arrow/items/be30bd7b43d763d33f35)
