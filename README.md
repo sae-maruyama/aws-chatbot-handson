@@ -103,7 +103,7 @@ AWSサービスを活用したナレッジベースチャットボットの構�
 8. 生成された「ウィジェットのスクリプト」をコピーし、WebサイトのHTMLに貼り付け
 
 ## 実行結果
-![実行結果](images/output.png)
+![実行結果](images/result.png)
 
 ---
 
@@ -158,6 +158,30 @@ Amazon Connectのコミュニケーションウィジェット設定で「ドメ
    - `'unsafe-eval'`
    - `worker-src`
    - `blob:`
+
+---
+### 問題4: チャットボットが落ちる
+
+**エラーメッセージ:**
+複雑な問いを投げると処理できない→エラー発生→「エラー」分岐→「切断」
+
+**失敗原因:**  
+Amazon Connectのチャットには厳格な制限があり、
+メッセージの最大サイズ：1024文字（約1KB）
+Lexボット（Bedrock）が1024文字を超える長文を返すと、Connectが処理できない
+![error](images/error.png)
+
+**解決策:**
+Amazon Lexのインテント設定画面で、モデルに対して下記のカスタムプロンプトを追加
+```
+You are a tourist information bot.
+Please answer user questions concisely and accurately.
+
+Important rules:
+- Keep your answers brief and to the point.
+- If your answers are longer, keep them to 500 characters or less.
+- Don't cut off your answers.
+```
 
 ---
 
