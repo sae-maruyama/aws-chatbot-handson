@@ -106,12 +106,12 @@ AWSサービスを活用したナレッジベースチャットボットの構�
 
 ## トラブルシューティング
 
-### ⚠️ 問題1: エイリアス設定のエラー
+### 問題1: エイリアス設定のエラー
 
 **エラーメッセージ:**
-TestBotAliasは本番環境のトラフィックに使用してはなりません
+TestBotAliasは本番環境のトラフィックに使用してはいけないので注意
 
-**原因:**  
+**失敗原因:**  
 テスト用エイリアス（TestBotAlias）を本番環境で使用しようとした
 
 **解決策:**
@@ -120,12 +120,12 @@ TestBotAliasは本番環境のトラフィックに使用してはなりませ�
 
 ---
 
-### ⚠️ 問題2: パラメータデータがないエラー
+### 問題2: パラメータデータがないエラー
 
 **エラーメッセージ:**
-1つ以上の入力パラメータがないか、無効になっています
+フロー作成時に、1つ以上の入力パラメータがないとエラーになる
 
-**原因:**  
+**失敗原因:**  
 「顧客の入力を取得する」ブロックでプロンプトが未設定
 
 **解決策:**
@@ -135,12 +135,12 @@ TestBotAliasは本番環境のトラフィックに使用してはなりませ�
 
 ---
 
-### ⚠️ 問題3: 403/401エラー（最重要）
+### 問題3: 403/401エラー（最重要）
 
 **現象:**  
-チャットウィジェットが表示されず、コンソールに403/401エラーが大量発生
+Webサイト上にチャットウィジェットが表示されず、コンソールに403/401エラーが大量発生
 
-**原因:**
+**失敗原因:**
 1. Amazon Connect側でCloudFrontドメイン（`https://dxxxxxx.cloudfront.net`）が未登録
 2. CSP（Content Security Policy）が厳しすぎて接続をブロック
 
@@ -158,15 +158,8 @@ Amazon Connectのコミュニケーションウィジェット設定で「ドメ
 
 ---
 
-## 📝 補足
-
-- Amazon Lexは英語(US)での設定が必須
-- 本番環境では必ず本番用エイリアスを使用
-- データソースの同期は必ず実行すること
-- コンタクトフローは保存後に公開が必要
-
 ## 🔗 参考リンク
 
 - [Amazon Bedrock Documentation](https://docs.aws.amazon.com/bedrock/)
-- [Amazon Lex Documentation](https://docs.aws.amazon.com/lex/)
-- [Amazon Connect Documentation](https://docs.aws.amazon.com/connect/)
+- [AWSを使ってノーコードでナレッジベースのAIチャットボットを作ってみた](https://business.ntt-east.co.jp/content/cloudsolution/ih_column-127.html)
+- [Amazon LexとAmazon Bedrockを使ってノーコードでチャットボットを作成するハンズオン](https://qiita.com/stand_arrow/items/be30bd7b43d763d33f35)
